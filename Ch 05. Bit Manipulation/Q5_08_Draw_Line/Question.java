@@ -59,7 +59,29 @@ public class Question {
 			System.out.println("");
 		}
 	}
-	
+	public static void mydrawLine(byte[] screen,int width,int x1,int x2,int y){
+		int leng = screen.length;
+//		int lon = leng/width;
+//		int temp_row = y/8;
+//		int temp_i = y%8;
+//		for(int i=temp_row*lon+x1;i<=temp_row*lon+x2;i++){
+//			screen[i]|=(1<<temp_i);
+//		}
+		int height = leng*8/width;
+		int j=0;
+		for(int i=y*width/8;i<(y+1)*width/8;i++){
+			int q=0x80;
+			while(q!=0&&j<8){
+				if(j>=x1&&j<=x2){
+					screen[i]= (byte) (screen[i]|q);
+				}
+				q= (byte) (q>>>1);
+//				System.out.println(q);
+				j++;
+			}
+		}
+		//throw new RuntimeException("E");
+	}
 	public static void main(String[] args) {
 		int width = 8 * 1;
 		int height = 1;
@@ -69,7 +91,8 @@ public class Question {
 					byte[] screen = new byte[width * height / 8];
 
 					System.out.println("row: " + r + ": " + c1 + " -> " + c2);
-					drawLine(screen, width, c1, c2, r);
+//					drawLine(screen, width, c1, c2, r);
+					mydrawLine(screen, width, c1, c2, r);
 					printScreen(screen, width);
 					System.out.println("\n\n");
 				}

@@ -26,6 +26,7 @@ public class Tester {
 		System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
 		int nbits = QuestionA.bitSwapRequired(a, b);
 		int nbits2 = QuestionB.bitSwapRequired(a, b);
-		System.out.println("Required number of bits: " + nbits + " " + nbits2);
+		int mybit = myCodeQ506.bitSwapRequired(a,b);
+		System.out.println("Required number of bits: " + nbits + " " + nbits2+" "+mybit);
 	}
 }
