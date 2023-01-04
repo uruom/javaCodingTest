@@ -28,10 +28,23 @@ public class Question {
 		}
 		return girls / (double) (boys + girls); 
 	}
-	
+
+	public static double myRunFamilies(int num){
+		int boy=0;
+		int girl=0;
+		for(int i=0;i<num;i++){
+			while(Math.random()<0.5){
+				boy++;
+			}
+			girl++;
+		}
+		return (double) girl/(boy+girl);
+	}
 	public static void main(String[] args) {
 		double ratio = runNFamilies(10000000);
+		double myratio = myRunFamilies(10000000);
 		System.out.println(ratio);
+		System.out.println(myratio);
 
 	}
 
