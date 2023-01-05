@@ -36,7 +36,9 @@ public class myCodeQ610 {
         return testStrips;
     }
     public static int findPoisonedBottle(ArrayList<Bottle> bottles,ArrayList<TestStrip> testStrips){
-
+        //不知道他bottle和srips怎么定义的
+//        真的是优秀，没想到可以通过二进制的方式，到时候通过二进制来看，就可了，厉害
+        return 0;
     }
     public static void main(String[] args) {
         int nBottles = 1000;
