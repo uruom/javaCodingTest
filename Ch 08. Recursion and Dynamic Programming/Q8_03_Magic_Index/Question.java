@@ -49,6 +49,7 @@ public class Question {
 	
 	public static void main(String[] args) {
 		for (int i = 0; i < 1000; i++) {
+//			System.out.println(i);
 			int size = AssortedMethods.randomIntInRange(5, 20);
 			int[] array = getDistinctSortedArray(size);
 			int v2 = magicFast(array);
