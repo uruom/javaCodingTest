@@ -39,10 +39,18 @@ public class MyCodeQ810 {
         }
     }
     public static void PaintDfs(Question.Color[][] screen,int row,int col,Question.Color tempColor,Question.Color replacedColor){
-
+        if(screen[row][col]==tempColor){
+            screen[row][col] = replacedColor;
+            if(row>0) PaintDfs(screen,row-1,col,tempColor,replacedColor);
+            if(col>0) PaintDfs(screen, row, col-1, tempColor, replacedColor);
+            if(row<screen.length-1) PaintDfs(screen, row+1, col, tempColor, replacedColor);
+            if(col<screen[0].length-1) PaintDfs(screen, row, col+1, tempColor, replacedColor);
+        }else{
+            return;
+        }
     }
     public static void PaintFill(Question.Color[][] screen,int row,int col,Question.Color color){
-
+        PaintDfs(screen,row,col,screen[row][col],color);
     }
     public static void main(String[] args) {
         int N = 10;
