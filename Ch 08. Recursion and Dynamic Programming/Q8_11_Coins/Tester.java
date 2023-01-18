@@ -7,10 +7,12 @@ public class Tester {
 			int[] denoms = {25, 10, 5, 1};
 			int waysA = Question.makeChange(i, denoms);
 			int waysB = QuestionB.makeChange(i, denoms);
-			if (waysA != waysB) {
-				System.out.println("Error: " + i + " : " + waysA + ", " + waysB);
+			int myWay = MyCodeQ811.makeChange(i,denoms);
+			if (waysA != waysB || waysB!=myWay) {
+				System.out.println("Error: " + i + " : " + waysA + ", " + waysB + ","+myWay);
 			}
 		}
+		System.out.println("Success");
 
 	}
 
